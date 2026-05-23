@@ -26,10 +26,9 @@ export default function Login() {
     }
   };
 
-  const handleGoogle = () => {
-    window.location.href = 'http://localhost:5000/api/auth/google';
-  };
-
+const handleGoogle = () => {
+  window.location.href = `${import.meta.env.VITE_API_URL?.replace('/api', '') || 'http://localhost:5000'}/api/auth/google`;
+};
   const inputStyle = {
     width: '100%', padding: '14px 16px',
     border: '1px solid rgba(26,26,24,0.2)', borderRadius: 4,
