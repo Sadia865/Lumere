@@ -14,7 +14,7 @@ import productRoutes from './routes/products.js';
 import cartRoutes from './routes/cart.js';
 import orderRoutes from './routes/orders.js';
 import userRoutes from './routes/users.js';
-import passport from './config/passport.js';
+// import passport from './config/passport.js';
 import wishlistRoutes from './routes/wishlist.js';   // ← add after other imports
 
 const __filename = fileURLToPath(import.meta.url);
@@ -31,7 +31,7 @@ app.use(cors({
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
-app.use(passport.initialize());
+// app.use(passport.initialize());
 app.use('/images', express.static(path.join(__dirname, 'public/images')));
 app.use(morgan('dev'));
 
@@ -49,7 +49,7 @@ app.get('/', (req, res) => {
   });
 });
 
-app.use('/api/auth', authRoutes);
+// app.use('/api/auth', authRoutes);
 app.use('/api/products', productRoutes);
 app.use('/api/cart', cartRoutes);
 app.use('/api/orders', orderRoutes);
