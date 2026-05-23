@@ -16,6 +16,7 @@ import orderRoutes from './routes/orders.js';
 import userRoutes from './routes/users.js';
 import passport from './config/passport.js';
 import wishlistRoutes from './routes/wishlist.js';   // ← add after other imports
+import seedRouter from './routes/seed.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -55,6 +56,7 @@ app.use('/api/cart', cartRoutes);
 app.use('/api/orders', orderRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/wishlist', wishlistRoutes);             
+app.use('/api', seedRouter);
 
 app.use(notFound);
 app.use(errorHandler);
