@@ -13,6 +13,7 @@ function cartReducer(state, action) {
     case 'SET_LOADING':
       return { ...state, loading: action.payload };
     case 'ADD_ITEM': {
+      if (!action.payload.product?._id) return state;
       const existing = state.items.findIndex(i => i.product._id === action.payload.product._id);
       if (existing >= 0) {
         const items = state.items.map((item, idx) =>
@@ -47,7 +48,10 @@ export function CartProvider({ children }) {
     if (isAuthenticated) {
       dispatch({ type: 'SET_LOADING', payload: true });
       API.get('/cart')
-        .then(({ data }) => dispatch({ type: 'SET_CART', payload: data.items || [] }))
+        .then(({ data }) => {
+          const validItems = (data.items || []).filter(i => i.product?._id);
+          dispatch({ type: 'SET_CART', payload: validItems });
+        })
         .catch(() => dispatch({ type: 'SET_LOADING', payload: false }));
     } else {
       try {
@@ -70,7 +74,6 @@ export function CartProvider({ children }) {
     dispatch({ type: 'ADD_ITEM', payload: { product, quantity } });
     if (isAuthenticated) {
       try {
-        // ✅ POST to /cart not /cart/add
         await API.post('/cart', { productId: product._id, quantity });
       } catch { /* optimistic */ }
     }
