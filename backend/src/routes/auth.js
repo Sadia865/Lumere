@@ -1,8 +1,8 @@
 // src/routes/auth.js
 import express from 'express';
 import jwt from 'jsonwebtoken';
-// import passport from 'passport';
-// import '../config/passport.js';
+import passport from 'passport';
+import '../config/passport.js';
 import {
   register,
   login,
