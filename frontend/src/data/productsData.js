@@ -28,119 +28,97 @@ import fireflyVitC from '../assets/Firefly_Gemini Flash_Vitamin C serum bottle w
 import fireflyMatcha from '../assets/Firefly_Green matcha face mask jar with green tea leaves and powder, _white minimal backgroun 779867.png';
 
 const products = [
-  {
-    _id: '1',
-    name: 'Radiance Serum',
-    subtitle: 'Vitamin C & Niacinamide',
-    price: 89,
-    comparePrice: 110,
-    image:
-      'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=1200&q=80',
-    images: [
-      'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=1200&q=80',
-    ],
-    category: 'serums',
-    featured: true,
-  },
+{
+  _id: '1',
+  name: 'Radiance Serum',
+  subtitle: 'Vitamin C & Niacinamide',
+  price: 89,
+  comparePrice: 110,
+  image: 'https://images.pexels.com/photos/3735747/pexels-photo-3735747.jpeg?auto=compress&cs=tinysrgb&w=1200',
+  images: [
+    'https://images.pexels.com/photos/3735747/pexels-photo-3735747.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    'https://images.pexels.com/photos/3738370/pexels-photo-3738370.jpeg?auto=compress&cs=tinysrgb&w=1200',
+  ],
+  category: 'serums',
+  featured: true,
+},
 
-  {
-    _id: '2',
-    name: 'Botanical Hydra Cream',
-    subtitle: 'Rose & Ceramide Complex',
-    price: 72,
-    image:
-      'https://images.unsplash.com/photo-1611080626919-7cf5a9dbab12?auto=format&fit=crop&w=1200&q=80',
-    images: [
-      'https://images.unsplash.com/photo-1611080626919-7cf5a9dbab12?auto=format&fit=crop&w=1200&q=80',
-    ],
-    category: 'moisturisers',
-    featured: true,
-  },
+{
+  _id: '2',
+  name: 'Botanical Hydra Cream',
+  subtitle: 'Rose & Ceramide Complex',
+  price: 72,
+  image: 'https://images.pexels.com/photos/3683107/pexels-photo-3683107.jpeg?auto=compress&cs=tinysrgb&w=1200',
+  images: ['https://images.pexels.com/photos/3683107/pexels-photo-3683107.jpeg?auto=compress&cs=tinysrgb&w=1200'],
+  category: 'moisturisers',
+  featured: true,
+},
 
-  {
-    _id: '3',
-    name: 'Purifying Clay Mask',
-    subtitle: 'Kaolin & Green Tea',
-    price: 54,
-    image:
-      'https://images.unsplash.com/photo-1596755389378-c31d21fd1273?auto=format&fit=crop&w=1200&q=80',
-    images: [
-      'https://images.unsplash.com/photo-1596755389378-c31d21fd1273?auto=format&fit=crop&w=1200&q=80',
-    ],
-    category: 'masks',
-    featured: true,
-  },
+{
+  _id: '3',
+  name: 'Purifying Clay Mask',
+  subtitle: 'Kaolin & Green Tea',
+  price: 54,
+  image: 'https://images.pexels.com/photos/3738339/pexels-photo-3738339.jpeg?auto=compress&cs=tinysrgb&w=1200',
+  images: ['https://images.pexels.com/photos/3738339/pexels-photo-3738339.jpeg?auto=compress&cs=tinysrgb&w=1200'],
+  category: 'masks',
+  featured: true,
+},
 
-  {
-    _id: '4',
-    name: 'Retinol Night Elixir',
-    subtitle: '0.5% Retinol & Peptides',
-    price: 98,
-    image:
-      'https://images.unsplash.com/photo-1570194065650-d99fb4a8b5f1?auto=format&fit=crop&w=1200&q=80',
-    images: [
-      'https://images.unsplash.com/photo-1570194065650-d99fb4a8b5f1?auto=format&fit=crop&w=1200&q=80',
-    ],
-    category: 'serums',
-    featured: true,
-  },
+{
+  _id: '4',
+  name: 'Retinol Night Elixir',
+  subtitle: '0.5% Retinol & Peptides',
+  price: 98,
+  image: 'https://images.pexels.com/photos/7796382/pexels-photo-7796382.jpeg?auto=compress&cs=tinysrgb&w=1200',
+  images: ['https://images.pexels.com/photos/7796382/pexels-photo-7796382.jpeg?auto=compress&cs=tinysrgb&w=1200'],
+  category: 'serums',
+  featured: true,
+},
 
-  {
-    _id: '5',
-    name: 'SPF 50 Daytime Shield',
-    subtitle: 'Invisible Mineral Sunscreen',
-    price: 46,
-    image:
-      'https://images.unsplash.com/photo-1631390561706-9f3e1fcea1e0?auto=format&fit=crop&w=1200&q=80',
-    images: [
-      'https://images.unsplash.com/photo-1631390561706-9f3e1fcea1e0?auto=format&fit=crop&w=1200&q=80',
-    ],
-    category: 'suncare',
-    featured: false,
-  },
+{
+  _id: '5',
+  name: 'SPF 50 Daytime Shield',
+  subtitle: 'Invisible Mineral Sunscreen',
+  price: 46,
+  image: 'https://images.pexels.com/photos/7428103/pexels-photo-7428103.jpeg?auto=compress&cs=tinysrgb&w=1200',
+  images: ['https://images.pexels.com/photos/7428103/pexels-photo-7428103.jpeg?auto=compress&cs=tinysrgb&w=1200'],
+  category: 'suncare',
+  featured: false,
+},
 
-  {
-    _id: '6',
-    name: 'Gentle Cleansing Balm',
-    subtitle: 'Chamomile & Jojoba',
-    price: 38,
-    image:
-      'https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=1200&q=80',
-    images: [
-      'https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=1200&q=80',
-    ],
-    category: 'cleansers',
-    featured: false,
-  },
+{
+  _id: '6',
+  name: 'Gentle Cleansing Balm',
+  subtitle: 'Chamomile & Jojoba',
+  price: 38,
+  image: 'https://images.pexels.com/photos/3685530/pexels-photo-3685530.jpeg?auto=compress&cs=tinysrgb&w=1200',
+  images: ['https://images.pexels.com/photos/3685530/pexels-photo-3685530.jpeg?auto=compress&cs=tinysrgb&w=1200'],
+  category: 'cleansers',
+  featured: false,
+},
 
-  {
-    _id: '7',
-    name: 'Hyaluronic Mist',
-    subtitle: '3-Weight HA Complex',
-    price: 29,
-    image:
-      'https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=1200&q=80',
-    images: [
-      'https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=1200&q=80',
-    ],
-    category: 'toners',
-    featured: false,
-  },
+{
+  _id: '7',
+  name: 'Hyaluronic Mist',
+  subtitle: '3-Weight HA Complex',
+  price: 29,
+  image: 'https://images.pexels.com/photos/4041392/pexels-photo-4041392.jpeg?auto=compress&cs=tinysrgb&w=1200',
+  images: ['https://images.pexels.com/photos/4041392/pexels-photo-4041392.jpeg?auto=compress&cs=tinysrgb&w=1200'],
+  category: 'toners',
+  featured: false,
+},
 
-  {
-    _id: '8',
-    name: 'Eye Contour Cream',
-    subtitle: 'Caffeine & Peptide Lift',
-    price: 62,
-    image:
-      'https://images.unsplash.com/photo-1590440165072-f5a8b5bfb399?auto=format&fit=crop&w=1200&q=80',
-    images: [
-      'https://images.unsplash.com/photo-1590440165072-f5a8b5bfb399?auto=format&fit=crop&w=1200&q=80',
-    ],
-    category: 'eyes',
-    featured: false,
-  },
+{
+  _id: '8',
+  name: 'Eye Contour Cream',
+  subtitle: 'Caffeine & Peptide Lift',
+  price: 62,
+  image: 'https://images.pexels.com/photos/6191374/pexels-photo-6191374.jpeg?auto=compress&cs=tinysrgb&w=1200',
+  images: ['https://images.pexels.com/photos/6191374/pexels-photo-6191374.jpeg?auto=compress&cs=tinysrgb&w=1200'],
+  category: 'eyes',
+  featured: false,
+},
 
   {
     _id: '9',
