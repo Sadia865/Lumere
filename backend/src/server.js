@@ -25,7 +25,12 @@ const app = express();
 connectDB();
 
 app.use(cors({
-  origin: process.env.FRONTEND_URL || 'http://localhost:5173',
+  origin: [
+    'https://lumiere-skins.vercel.app',
+    'https://lumere-xi31.vercel.app',
+    process.env.FRONTEND_URL,
+    'http://localhost:5173',
+  ].filter(Boolean),
   credentials: true,
 }));
 app.use(express.json());
