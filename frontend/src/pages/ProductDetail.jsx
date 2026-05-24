@@ -4,9 +4,13 @@ import API from '../api/axios';
 import { useCart } from '../context/CartContext';
 import ProductCard from '../components/ProductCard';
 
-const BASE_URL = 'http://localhost:5000';
-const resolveImg = (src) => src?.startsWith('http') ? src : `${BASE_URL}${src}`;
+import LOCAL_IMAGES from '../utils/localImages.js';
 
+const resolveImg = (name, src) => {
+  if (LOCAL_IMAGES[name]) return LOCAL_IMAGES[name];
+  if (src?.startsWith('http')) return src;
+  return 'https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=600&q=60';
+};
 export default function ProductDetail() {
   const { id } = useParams();
   const [product,   setProduct]   = useState(null);
@@ -58,7 +62,7 @@ export default function ProductDetail() {
     </div>
   );
 
-  const images = (product.images?.length ? product.images : [product.image]).map(resolveImg);
+const images = [resolveImg(product.name, product.image)];
   const stars  = '★'.repeat(Math.round(product.rating || 0)) + '☆'.repeat(5 - Math.round(product.rating || 0));
   const inStock = (product.stock ?? product.countInStock ?? 0) > 0;
 

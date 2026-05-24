@@ -1,8 +1,12 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 
-const BASE_URL = 'http://localhost:5000';
-const resolveImg = (src) => src?.startsWith('http') ? src : `${BASE_URL}${src}`;
+import LOCAL_IMAGES from '../utils/localImages.js';
+const resolveImg = (name, src) => {
+  if (LOCAL_IMAGES[name]) return LOCAL_IMAGES[name];
+  if (src?.startsWith('http')) return src;
+  return 'https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=600&q=60';
+};
 
 export default function Cart() {
   const { items, subtotal, removeFromCart, updateQuantity, clearCart } = useCart();
@@ -40,7 +44,7 @@ export default function Cart() {
                 <div key={product._id} style={{ display: 'flex', gap: 20, padding: '24px 0', borderBottom: '1px solid rgba(123,143,114,0.15)', alignItems: 'flex-start' }}>
                   <Link to={`/products/${product._id}`}>
                     <img
-                      src={resolveImg(product.image || product.images?.[0])}
+src={resolveImg(product.name, product.image)}
                       alt={product.name}
                       style={{ width: 90, height: 112, objectFit: 'cover', borderRadius: 4, background: 'var(--cream-dark)', flexShrink: 0 }}
                       onError={e => { e.currentTarget.src = 'https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=200&q=60'; }}
