@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams, Link, useLocation } from 'react-router-dom';
 import API from '../api/axios';
 
-const BASE_URL = 'http://localhost:5000';
+const BASE_URL = import.meta.env.VITE_API_URL?.replace('/api', '') || '';
 const resolveImg = (src) => src?.startsWith('http') ? src : `${BASE_URL}${src}`;
 
 // ✅ match Order model enum values exactly
